@@ -16,7 +16,14 @@ body{
     width:100%;
     height:100%;
     overflow:hidden;
-    background:transparent;
+}
+
+/* Latar belakang */
+body{
+    background:#131925;
+    animation:
+        bgChange 1.5s linear forwards 2s,
+        bgFadeOut 1s ease forwards 3.5s;
 }
 
 /* Logo */
@@ -30,25 +37,30 @@ body{
     opacity:0;
 
     animation:
-        fadeIn 1s ease forwards,
-        fadeOut 1s ease forwards;
-
-    /* Fade in langsung, fade out setelah tampil 5 detik */
-    animation-delay:
-        0s,
-        4s;
+        logoFadeIn 0.5s ease forwards,
+        logoFadeOut 1s ease forwards 3.5s;
 }
 
-@keyframes fadeIn{
+@keyframes logoFadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes logoFadeOut{
+    from{opacity:1;}
+    to{opacity:0;}
+}
+
+@keyframes bgChange{
     from{
-        opacity:0;
+        background:#131925;
     }
     to{
-        opacity:1;
+        background:#000000;
     }
 }
 
-@keyframes fadeOut{
+@keyframes bgFadeOut{
     from{
         opacity:1;
     }
