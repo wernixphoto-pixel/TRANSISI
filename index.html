@@ -16,64 +16,56 @@ body{
     width:100%;
     height:100%;
     overflow:hidden;
+    background:transparent;
 }
 
-/* Latar belakang */
-body{
-    background:#131925;
-    animation:
-        bgChange 1.5s linear forwards 2s,
-        bgFadeOut 1s ease forwards 3.5s;
-}
-
-/* Logo */
-#opening{
+#overlay{
     position:fixed;
     inset:0;
-    width:100%;
-    height:100%;
-    object-fit:contain;
-
+    background:#131925;
     opacity:0;
-
-    animation:
-        logoFadeIn 0.5s ease forwards,
-        logoFadeOut 1s ease forwards 3.5s;
+    animation: opening 4.5s linear forwards;
 }
 
-@keyframes logoFadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
+@keyframes opening{
 
-@keyframes logoFadeOut{
-    from{opacity:1;}
-    to{opacity:0;}
-}
-
-@keyframes bgChange{
-    from{
+    /* Mulai transparan */
+    0%{
+        opacity:0;
         background:#131925;
     }
-    to{
+
+    /* Fade in 0,5 detik */
+    11.11%{
+        opacity:1;
+        background:#131925;
+    }
+
+    /* Bertahan 2 detik */
+    55.56%{
+        opacity:1;
+        background:#131925;
+    }
+
+    /* Gradasi ke hitam selama 1 detik */
+    77.78%{
+        opacity:1;
         background:#000000;
     }
-}
 
-@keyframes bgFadeOut{
-    from{
-        opacity:1;
-    }
-    to{
+    /* Fade out 1 detik */
+    100%{
         opacity:0;
+        background:#000000;
     }
+
 }
 </style>
 
 </head>
 <body>
 
-<img id="opening" src="logo.png" alt="Opening">
+<div id="overlay"></div>
 
 </body>
 </html>
