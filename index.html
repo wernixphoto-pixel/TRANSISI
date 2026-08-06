@@ -24,41 +24,26 @@ body{
     inset:0;
     background:#131925;
     opacity:0;
-    animation: opening 4.5s linear forwards;
+
+    animation:
+        fadeIn 0.5s forwards,
+        changeColor 1s 2.5s forwards,
+        fadeOut 1s 3.5s forwards;
 }
 
-@keyframes opening{
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
 
-    /* Mulai transparan */
-    0%{
-        opacity:0;
-        background:#131925;
-    }
+@keyframes changeColor{
+    from{background:#131925;}
+    to{background:#000000;}
+}
 
-    /* Fade in 0,5 detik */
-    11.11%{
-        opacity:1;
-        background:#131925;
-    }
-
-    /* Bertahan 2 detik */
-    55.56%{
-        opacity:1;
-        background:#131925;
-    }
-
-    /* Gradasi ke hitam selama 1 detik */
-    77.78%{
-        opacity:1;
-        background:#000000;
-    }
-
-    /* Fade out 1 detik */
-    100%{
-        opacity:0;
-        background:#000000;
-    }
-
+@keyframes fadeOut{
+    from{opacity:1;}
+    to{opacity:0;}
 }
 </style>
 
